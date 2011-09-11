@@ -1,7 +1,8 @@
 $:<< File.join(File.dirname(__FILE__), 'stack')
 
 # Require the stack base
-%w(essential scm ruby_enterprise memcached postgresql mysql).each do |lib|
+# Unused options: apache postgresql memcache
+%w(essential scm nginx ruby_enterprise mysql).each do |lib|
   require lib
 end
 
@@ -14,9 +15,6 @@ end
 # Apache has some extra installers for etags, gzip/deflate compression and expires headers.
 # These are enabled by default when you choose Apache, you can remove these dependencies within
 # stack/apache.rb
-
-require 'apache'
-# require 'nginx'
 
 # What we're installing to your server
 # Take what you want, leave what you don't
